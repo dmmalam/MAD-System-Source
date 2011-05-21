@@ -4,7 +4,7 @@ h2. What
 
 Z80 assembly source for 860-dot LED display. 
 
-The associated hardware project is described "here":www.dharmeshmalam.com/projects/mad
+The associated hardware project is described "here":http://www.dharmeshmalam.com/projects/mad
 
 The hardware is setup such that there is an area of RAM which becomes the frame-buffer. 
 Writing to this memory will directly effect the display.

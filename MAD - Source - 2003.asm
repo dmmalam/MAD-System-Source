@@ -1,4 +1,4 @@
-;   © Dharmesh Malam 2002
+;   Â© Dharmesh Malam 2003
 ;   Memory Addressed Display Software Stack
 
 ;    This program is free software: you can redistribute 
@@ -54,7 +54,7 @@ bcd16string        equ     0966h
 ;-------------------------------------------------------
 
 ;Routine to update external ram with internal VRAM buffer
-;© Dharmesh Malam 2003
+;Â© Dharmesh Malam 2003
 
 ;pin 0 = trisate port 1 and 2, when high, ports are high impedance, i.e. active low
 ;pin 1 = main display clock enable, active high, high for normal operation
@@ -145,7 +145,7 @@ ret
 end
 
 ;-------------------------------------------------------
-;© Dharmesh Malam 2003
+;Â© Dharmesh Malam 2003
 ; Boot code
 
 org 000h
@@ -164,7 +164,7 @@ call clear_vram
 jp logo
 
 ;--------------------------------------------------------
-;© Dharmesh Malam 2003
+;Â© Dharmesh Malam 2003
 ; Clear video ram
 
 org clear_vram
@@ -226,7 +226,7 @@ ret
 
 ;--------------------------------------------------------------
 
-;© Dharmesh Malam 2003
+;Â© Dharmesh Malam 2003
 ; returns pseudo random 8 bit number in a.
 ; (r_seed) is a in ram byte must be initialised to a non zero value
 ;or this function will always return zero
@@ -248,7 +248,7 @@ r_seed:
 
 ;---------------------------------------------------------------
 
-;© Dharmesh Malam 2003
+;Â© Dharmesh Malam 2003
 ;find pixel routine for 3,4x6, (21,28x30 dots)
 ;b=x c=y
 ;origin is top left corner
@@ -289,7 +289,7 @@ fp_bits:     db 80h,40h,20h,10h,08h,04h,02h,01h
 ;----------------------------------------------------------
 
 ;basic pixel operations
-;© Dharmesh Malam 2003
+;Â© Dharmesh Malam 2003
 ;all destroy a and need findpixel
 
 #include zinc.asm
@@ -328,7 +328,7 @@ ret
 ;----------------------------------------------------------
 
 ;sprite drawing routine (sdr): 8 bit clipping version
-;© Dharmesh Malam 2003
+;Â© Dharmesh Malam 2003
 ;inputs:
 ;    b=x coordinate
 ;    c=y coordinate
@@ -575,7 +575,7 @@ bcd16string:
     db    0,0,0,0,0,0
 
 ;------------------------------------------------------------------------
-;© Dharmesh Malam 2003
+;Â© Dharmesh Malam 2003
 ;put 16 bit number de, at bc with smallfont
 
 put_num        
@@ -598,7 +598,7 @@ pop de
 ret
 
 ;-------------------------------------------------------------
-;© Dharmesh Malam 2003
+;Â© Dharmesh Malam 2003
 ; library of character/text routines
 
 ;       values and conversion of bases and ascii characters
@@ -782,7 +782,7 @@ inc hl            ; next byte
 jr put_small      ; jump to top,hence repeat until all char's are done
 
 ;-----------------------------------------------------------------------------
-;© Dharmesh Malam 2003
+;Â© Dharmesh Malam 2003
 org pause
 pause:
 in a,(0)          ; get keys of pad 1
@@ -849,7 +849,7 @@ pause_text:
 db "pause",0
 
 ;---------------------------------------------
-;© Dharmesh Malam 2003
+;Â© Dharmesh Malam 2003
 
 wait:             ; call with c as multiplier
 push bc           ; save
@@ -862,7 +862,7 @@ jr nz,wai2        ; outer loop
 pop bc
 ret
 
-;© Dharmesh Malam 2003
+;Â© Dharmesh Malam 2003
 ;each font is 4x6, stored condensed
 ;------------------------------------
 
@@ -1251,7 +1251,7 @@ db 00000000b
 db 00000000b
 db 11110000b
 
-;© Dharmesh Malam 2003
+;Â© Dharmesh Malam 2003
 ;menu routine
 org 0044h
 
@@ -1398,10 +1398,10 @@ jm_3:
 db 0
 db 0
 ;----------------------------------------------------------------
-;© Dharmesh Malam 2003
+;Â© Dharmesh Malam 2003
 ;scrolls user inputted text across the screen
 ;at random y values
-;© dharmesh malam 2002
+;Â© dharmesh malam 2002
 ;#include zinc.asm
 
 org 021ah
@@ -1581,7 +1581,7 @@ end
 
 ;-----------------------------------------------------------------
 
-;© Dharmesh Malam 2003
+;Â© Dharmesh Malam 2003
 org 120h
 
 logo:                      ;does intro screen
