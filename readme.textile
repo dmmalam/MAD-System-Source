@@ -1,0 +1,62 @@
+h1. README
+
+h2. What
+
+Z80 assembly source for 860-dot LED display. 
+
+The associated hardware project is described "here":www.dharmeshmalam.com/projects/mad
+
+The hardware is setup such that there is an area of RAM which becomes the frame-buffer. 
+Writing to this memory will directly effect the display.
+
+The source serves as a example on how to write 2D graphics routines at the lowest level.
+
+h2. Why
+
+MAD was designed to really stretch what can be done with mini LED dot-matrix displays and a tiny microcomputer.
+
+A high density 860-pixel display was assembled that could be used to display arbitrary graphics. The display controller was designed to present the pixels from a memory backed frame buffer, analogous to a graphics card in modern computers. Programs can be written is Z80 assembler to manipulate the display.
+
+A rich graphics library was written to present a clean granular API to 'application developers'. It included high level sprite and text drawing functions which could automatically clip, in addition to lower level pixel setting routines. The API was used to create a very primitive OS that created a menu allowing users to choose programs.
+
+The inputs to the system were two mini controllers reminiscent of a 90s console system. The 'OS' presents an API to expose the controller input. There was also a primitive sound system which allowed the developer to output a variety of buzzes.
+
+The display and associated multiplexer circuitry was built on a double sided PCB, while the rest of the system was constructed on a breadboard.
+
+h2. Routine Table
+
+|_. Name |_. Description |_._ Address |
+| outram | display driver | 0400h |
+| find_pixel | find pixel routine for 3,4x6, (21,28x30 dots) | 0441h |
+| sdr8_cl | sprite drawing routine (sdr): 8 bit clipping version | 048Ah |
+| put_pixel | blit pixel at b,c | 046Ah |
+| remove_pixel | remove pixel at b,c | 0472h |
+| change_pixel | change pixel at b,c | 047Bh |
+| test_pixel | tests pixel at b,c | 0483h |
+| clear_vram | Clear video ram | 051Ch |
+| put_char | put the character in d, with small font, at bc | 0529h |
+| put_small | put at bc, (x,y), string pointed to by hl, with small font,end at 0 | 0565h |
+| rand  | returns pseudo random 8 bit number in a. | 0634h |
+| bintobcd | format a registers into their ascii string equivalents | 0646h |
+| put_num | put 16 bit number de, at bc with smallfont | 069CH |
+| wait |  wait for a cycles | 06B2h |
+| pause |  interrupt routine| 06BCh |
+| sound | audio driver | 0726h |
+| sound_test | app to test sounds | 0759h |
+| menu | menu routine | 0044h |
+| scroller | screen save routine | 021Ah |
+| logo | boot splash screen routine | 0120h |
+
+
+h2. License
+
+h3. GPL2
+
+h2. Contact
+
+Dharmesh Malam
+
+@dmmalam
+
+www.dharmeshmalam.com
+
