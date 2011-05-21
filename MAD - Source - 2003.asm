@@ -46,7 +46,7 @@ sound_0            equ     0903h
 sound_1            equ     0904h
 sound_2            equ     0905h
 
-puttext temp       equ     0950h
+puttext            equ     0950h
 randseed           equ     0960h
 bcd16              equ     0961h
 bcd16string        equ     0966h
@@ -90,7 +90,7 @@ org outram
 
 outram:
 di                            ; disables interrupts, for speed
-ex af,af'
+ex af,af'                     ;'
 exx
                               ; 00100011
 ld a,10110001b                ; make /rd high, and stop mdc, /en2 -> high
@@ -136,7 +136,7 @@ out (2),a                     ; output
 ld a,00100011b                ; enable mdc,and /en2
 out (2),a                     ; output
 
-ex af,af'
+ex af,af'                     ;'
 exx
 
 ei                            ; re-enable interrupts
@@ -1385,9 +1385,9 @@ jp (hl)                      ; jump to the address from the table--hl, not (hl)
 title:
 db "*select*"
 ent_1:
-"game",0
-"sound",0
-"scroler",0
+db "game",0
+db "sound",0
+db "scroler",0
 jm_1:
 db 0
 db 0
