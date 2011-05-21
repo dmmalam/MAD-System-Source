@@ -25,7 +25,7 @@ The display and associated multiplexer circuitry was built on a double sided PCB
 
 h2. Routine Table
 
-|_. Name |_. Description |_._ Address |
+|_. Name |_. Description |_. Address |
 | outram | display driver | 0400h |
 | find_pixel | find pixel routine for 3,4x6, (21,28x30 dots) | 0441h |
 | sdr8_cl | sprite drawing routine (sdr): 8 bit clipping version | 048Ah |
